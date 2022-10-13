@@ -1,0 +1,37 @@
+header{
+    min-height: 5vh;
+    background: url("../img/bg-header.jpg") no-repeat top/100% 50% fixed;
+}
+
+
+@font-face{
+    font-family: 'Courgette-Regular';
+    src: url("../fonts/Courgette-Regular.ttf") format("truetype");
+}
+.mainHeadline{
+    font-family: 'Courgette-Regular', sans-serif;
+    color: #034217;
+    word-spacing: 2px;
+    text-align: center;
+    padding: 20px;
+    font-size: 3vw;
+    background-color: rgba(255,255,255, 0.4);
+    text-shadow: rgb(255 255 255 / 83%) 2px 1px 3px;
+}
+
+.menu{
+    list-style-type: none;
+    padding: 20px;
+    margin: 0;
+    justify-content: space-around;
+    background-color: #369e38;
+    max-width: 40%;
+}
+nav{
+    position: sticky;
+    align-items: center;
+    top: 0;
+}
+footer{
+
+}
