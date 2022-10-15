@@ -1,37 +1,67 @@
-header{
-    min-height: 5vh;
-    background: url("../img/bg-header.jpg") no-repeat top/100% 50% fixed;
-}
-
-
 @font-face{
     font-family: 'Courgette-Regular';
     src: url("../fonts/Courgette-Regular.ttf") format("truetype");
 }
+header{
+    min-height: 3vh;
+    background: url("../img/bg-header.jpg") no-repeat top/100% 50% fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
 .mainHeadline{
     font-family: 'Courgette-Regular', sans-serif;
-    color: #034217;
+    color: #daf3d6;
     word-spacing: 2px;
     text-align: center;
-    padding: 20px;
-    font-size: 3vw;
-    background-color: rgba(255,255,255, 0.4);
-    text-shadow: rgb(255 255 255 / 83%) 2px 1px 3px;
+    padding: 30px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-size: calc(15px + 2vw);
+    background-color: rgba(153, 197, 142, 0.4);
+    text-shadow: rgb(16, 59, 48) 2px 1px 3px;
+    border-radius: 15px;
+    box-shadow: 2px 3px 5px rgba(215, 255, 194, 0.93), 2px 3px 5px #444 inset;
 }
 
 .menu{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    font-size: calc(0.7em + .5vw);
     list-style-type: none;
-    padding: 20px;
     margin: 0;
-    justify-content: space-around;
+}
+nav li{
+    margin-right: 5px;
+    padding: 10px;
     background-color: #369e38;
-    max-width: 40%;
+    border: 4px ridge #5A6E59;
+    border-radius: 5px;
+}
+nav li:hover{
+    background-color: #D7FFC2ED;
+}
+.menuStart{
+    border-top-left-radius: 50%;
+}
+.menuEnd{
+    margin-right: 0;
+    border-top-right-radius: 50%;
 }
 nav{
     position: sticky;
-    align-items: center;
+    display: flex;
+    justify-content: center;
     top: 0;
 }
-footer{
 
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-end;
+    /*min-height: 2vh;*/
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(110,9,121,1) 10%, rgba(44,201,57,1) 36%, rgba(255,0,0,1) 58%, rgba(255,188,0,1) 78%, rgba(255,255,0,1) 100%);
 }
