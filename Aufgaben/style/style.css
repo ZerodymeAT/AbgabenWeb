@@ -2,66 +2,54 @@
     font-family: 'Courgette-Regular';
     src: url("../fonts/Courgette-Regular.ttf") format("truetype");
 }
-header{
-    min-height: 3vh;
-    background: url("../img/bg-header.jpg") no-repeat top/100% 50% fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-}
-.mainHeadline{
+.headlines{
     font-family: 'Courgette-Regular', sans-serif;
-    color: #daf3d6;
-    word-spacing: 2px;
-    text-align: center;
-    padding: 30px;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    font-size: calc(15px + 2vw);
-    background-color: rgba(153, 197, 142, 0.4);
-    text-shadow: rgb(16, 59, 48) 2px 1px 3px;
-    border-radius: 15px;
-    box-shadow: 2px 3px 5px rgba(215, 255, 194, 0.93), 2px 3px 5px #444 inset;
+    color: #103B30FF;
+    text-shadow: rgb(218, 243, 214) 2px 1px 3px;
+    font-size: 20px;
 }
-
-.menu{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    font-size: calc(0.7em + .5vw);
-    list-style-type: none;
+.spritzer{
+    font-size: 20px ;
+    font-style: inherit;
+    font-variant: small-caps;
+    padding: 0 0 0 2em;
     margin: 0;
 }
-nav li{
-    margin-right: 5px;
-    padding: 10px;
-    background-color: #369e38;
-    border: 4px ridge #5A6E59;
-    border-radius: 5px;
-}
-nav li:hover{
-    background-color: #D7FFC2ED;
-}
-.menuStart{
-    border-top-left-radius: 50%;
-}
-.menuEnd{
-    margin-right: 0;
-    border-top-right-radius: 50%;
-}
-nav{
-    position: sticky;
+.awardStatus{
     display: flex;
+    flex-wrap: nowrap;
     justify-content: center;
-    top: 0;
+}
+.awardStatus p{
+    width: 300px;
+    font-weight: bolder;
+    word-spacing: 5px;
+    text-shadow: rgb(16, 59, 48) 2px 1px 3px;
+    padding: 10px;
+    margin: 10px;
+    border: 5px solid;
+    border-radius: 25px;
+    border-color: #103B30;
+    text-align: center;
+    box-shadow: 2px 3px 5px #103b30 inset;
 }
 
-footer{
+.imgFlex{
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: flex-end;
-    /*min-height: 2vh;*/
-    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(110,9,121,1) 10%, rgba(44,201,57,1) 36%, rgba(255,0,0,1) 58%, rgba(255,188,0,1) 78%, rgba(255,255,0,1) 100%);
+    align-items: center;
+}
+.imgSize{
+    width: 100%;
+}
+.position{
+    position: relative;
+}
+.position figcaption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(218, 243, 214);
+    /*DO HOTS WOS GRBA*/
 }

@@ -1,18 +1,19 @@
 body{
     display: grid;
-    grid-template-columns: 1fr 1fr 3fr;
+    grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
     /*"menuelement" "menuelement" "menuelement"*/
     "headline headline headline"
     "menuelement menuelement menuelement"
-    "seiteli inhalt inhalt"
-    "seiteli inhalt inhalt"
+    "seiteli inhalt seitere"
+    "seiteli inhalt seitere"
     "fuss fuss fuss";
     gap: 10px 20px;
 }
 header{grid-area: headline;}
 nav{grid-area: menuelement}
 main{grid-area: inhalt;}
-reserve{grid-area: seiteli;}
+seiteli{grid-area: seiteli;}
+seitere{grid-area: seitere;}
 footer{grid-area: fuss;}
