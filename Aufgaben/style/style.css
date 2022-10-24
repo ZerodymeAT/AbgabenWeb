@@ -8,6 +8,7 @@
     text-shadow: rgb(218, 243, 214) 2px 1px 3px;
     font-size: 20px;
 }
+
 .spritzer{
     font-size: 20px ;
     font-style: inherit;
@@ -21,10 +22,13 @@
     justify-content: center;
 }
 .awardStatus p{
+    font-family: 'Courgette-Regular', sans-serif;
+    background-color: #D7FFC2ED;
     width: 300px;
     font-weight: bolder;
     word-spacing: 5px;
-    text-shadow: rgb(16, 59, 48) 2px 1px 3px;
+    color: #103b30;
+    text-shadow: rgb(90, 110, 89) 2px 1px 3px;
     padding: 10px;
     margin: 10px;
     border: 5px solid;
@@ -39,8 +43,14 @@
     flex-wrap: wrap;
     align-items: center;
 }
+
+/*Ansehen was das bewirkt*/
+.imgFlex section{
+    flex: 1 100 250px;
+}
+
 .imgSize{
-    width: 100%;
+    max-width: 100%;
 }
 .position{
     position: relative;

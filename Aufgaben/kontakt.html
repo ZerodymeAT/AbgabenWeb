@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/HeadNavFoot.css">
     <link rel="stylesheet" href="style/grid.css">
+    <link rel="stylesheet" href="style/kontakt.css">
 </head>
 <body>
 <header>
@@ -28,6 +29,40 @@
         </li>
     </ul>
 </nav>
+<main>
+<article>
+    <form action="" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Kontaktformular</legend>
+            <p>Solltest du Interesse an einem Welpen haben, kannst du dich hier bei mir melden:</p>
+                <div class="formFlex">
+                    <label for="Vorname">Vorname</label>
+                    <input type="text" name="Vorname" id="Vorname" placeholder="Dein Vorname" required>
+                </div>
+            <div class="formFlex">
+                <label for="Nachname">Nachname</label>
+                <input type="text" name="Nachname" id="Nachname" placeholder="Dein Nachname" required>
+            </div>
+            <div class="formFlex">
+                <label for="Mailadresse">Mailadresse</label>
+                <input type="email" name="Mailadresse" id="Mailadresse" placeholder="Mail@dre.se" required>
+            </div>
+            <div class="formFlex">
+                <label for="Telefon">Telefonnummer</label>
+                <input type="tel" name="Telefon" id="Telefon" placeholder="0043/123 456">
+            </div>
+            <div class="formFlex">
+                <label for="Motivation">Motivation</label>
+                <textarea class="textMotivation" type="text" name="Motivation" id="Motivation" placeholder="Als verantwordungsvolle Züchterin, möchte ich sicher gehen, dass die Tiere in guter Obhut sind, schreibe hier deine Erfahrungen mit Hunden und deine ev. Ziele"></textarea>
+            </div>
+            <div>
+                <button type="submit">Absenden</button>
+            </div>
+        </fieldset>
+    </form>
+
+</article>
+</main>
 <footer>&copy; 2022-11-15 by Bätter-Solutions - Origin:&nbsp<a href="http://kuernberghunde.at" target="_blank">Kürnberghunde.at </a>&nbspzuletzt aktualisiert am 2022-09-19</footer>
 </body>
 </html>

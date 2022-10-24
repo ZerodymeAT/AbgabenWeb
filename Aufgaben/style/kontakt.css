@@ -1,0 +1,22 @@
+form{
+    max-width: 600px;
+    margin: 20px auto;
+}
+input{
+    padding: 5px;
+    border: 1px solid #cacaca;
+}
+.formFlex{
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.textMotivation{
+    min-width: 400px;
+    min-height: 80px;
+}
+button{
+    float: right;
+}

@@ -12,7 +12,8 @@ header{
     word-spacing: 2px;
     text-align: center;
     padding: 15px 30px 15px 30px;
-    font-size: 2vw;
+    font-size: clamp(20px, 2vw, 2vw);
+    /*min-font-size: 80px; */
     background-color: rgba(153, 197, 142, 0.4);
     text-shadow: rgb(16, 59, 48) 2px 1px 3px;
     border-radius: 15px;
@@ -27,6 +28,16 @@ header{
     list-style-type: none;
     margin: 0;
 }
+.menu a{
+    font-family: 'Courgette-Regular', sans-serif;
+    text-decoration: none;
+    color: #daf3d6;
+}
+.menu a:hover, nav li:hover{
+    color: #103B30;
+    background-color: #D7FFC2ED;
+    text-decoration: underline;
+}
 nav li{
     margin-right: 5px;
     padding: 10px;
@@ -34,9 +45,7 @@ nav li{
     border: 4px ridge #5A6E59;
     border-radius: 5px;
 }
-nav li:hover{
-    background-color: #D7FFC2ED;
-}
+
 .menuStart{
     border-bottom-left-radius: 45%;
 }
@@ -59,5 +68,5 @@ footer{
     bottom: 0;
     font-size: 12px;
     background: rgb(54,158,56);
-    background: linear-gradient(0deg, rgba(54,158,56,1) 50%, rgba(255,255,255,1) 80%);
+    background: linear-gradient(0deg, rgba(54,158,56,1) 70%, rgba(255,255,255,1) 90%);
 }
