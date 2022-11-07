@@ -2,24 +2,63 @@
     font-family: 'Courgette-Regular';
     src: url("../fonts/Courgette-Regular.ttf") format("truetype");
 }
+body, html{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+
+}
+main {
+    z-index: 1;
+    padding-bottom: 25px;
+}
 .headlines{
     font-family: 'Courgette-Regular', sans-serif;
     color: #103B30FF;
     text-shadow: rgb(218, 243, 214) 2px 1px 3px;
     font-size: 20px;
 }
+h2 {
+    text-align: center;
+}
+h3 {
+    text-align: right;
+    margin-right: 30px;
+}
+.pt { padding-top: 5%;}
 
-.spritzer{
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+article {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+.border{
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
+    box-shadow: 1px 1px 6px #646464;
+}
+.textpassagen{
+    /*flex: 1 1 200px;*/
+    padding: 10px;
+}
+.video {
+    /*align-items: center;*/
+    justify-content: center;
+}
+.rude{
     font-size: 20px ;
     font-style: inherit;
     font-variant: small-caps;
     padding: 0 0 0 2em;
     margin: 0;
 }
-body{
-    margin: 0;
-}
-
 .awardStatus{
     display: flex;
     flex-wrap: nowrap;
@@ -41,20 +80,15 @@ body{
     text-align: center;
     box-shadow: 2px 3px 5px #103b30 inset;
 }
-
 .imgFlex{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
-
-/*Ansehen was das bewirkt*/
-.imgFlex section{
-    flex: 1 100 250px;
-}
-
 .imgSize{
     max-width: 100%;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
 }
 .position{
     position: relative;
@@ -62,10 +96,6 @@ body{
 .position figcaption {
     position: absolute;
     bottom: 0;
-    width: 100%;
-    padding: 10px;
+    width: 50%;
     background-color: rgb(218, 243, 214);
-    /*DO HOTS WOS GRBA*/
 }
-
-
