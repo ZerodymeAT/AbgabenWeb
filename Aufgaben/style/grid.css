@@ -1,7 +1,7 @@
 body{
     display: grid;
     grid-template-rows: auto auto auto;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     gap: 6% 0px;
     grid-template-areas:
     "headline headline headline"
