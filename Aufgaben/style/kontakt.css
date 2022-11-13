@@ -14,6 +14,7 @@ input{
     justify-content: space-between;
 }
 .textMotivation{
+    /* mindestbreiten sind etwas problematisch bei Mobilansichten */
     min-width: 400px;
     min-height: 80px;
 }
