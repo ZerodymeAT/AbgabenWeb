@@ -1,0 +1,123 @@
+.cssButtonRound {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.cssButtonRound a:active {
+    background: #f5f5f5;
+}
+.cssButtonRound td {
+    display: inline-block;
+    margin-right: -4px;
+    position: relative;
+}
+.cssButtonRound td:before {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #fff;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    z-index: -1;
+}
+.cssButtonRound a {
+    background-color: #f7f7f7;
+    background-image: linear-gradient(#f7f7f7, #e7e7e7);
+    border-radius: 50%;
+    box-shadow: 0 3px 8px #aaa, inset 0 2px 3px #fff;
+    color: #878787;
+    display: block;
+    font-family: 'Poiret One', cursive;
+    font-size: 20px;
+    line-height: 44px;
+    text-decoration: none;
+    margin: 25px;
+    position: relative;
+    width: 44px;
+    height: 44px;
+}
+.cssButtonRound a:before {
+    background: #fff;
+    border-top: 2px solid #ddd;
+    border-radius: 50%;
+    box-shadow: inset 0 8px 48px #ddd;
+    content: '';
+    display: block;
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    top: -10px;
+    bottom: -10px;
+    z-index: -1;
+}
+.cssButtonRound a:visited {
+    color: #a7a7a7;
+}
+.cssButtonRound a:hover {
+    color: hsl(30, 70%, 50%);
+}
+/*============================Trenner====================================*/
+.cssButton {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.cssButton a:active {
+    background: #f5f5f5;
+}
+.cssButton td {
+    display: inline-block;
+    margin-right: -4px;
+    position: relative;
+}
+.cssButton td:before {
+    /*border-top: 1px solid #ddd;*/
+    border-bottom: 1px solid #fff;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    z-index: -1;
+}
+.cssButton a, p {
+    background-color: #f7f7f7;
+    background-image: linear-gradient(#f7f7f7, #e7e7e7);
+    border-radius: 15%;
+    box-shadow: 0 3px 8px #aaa, inset 0 2px 3px #fff;
+    color: #878787;
+    display: block;
+    font-family: 'Poiret One', cursive;
+    font-size: 15px;
+    line-height: 34px;
+    text-decoration: none;
+    margin: 15px;
+    position: relative;
+    width: 250px;
+    /*height: 44px;*/
+}
+.cssButton a:before, p:before {
+    background: #fff;
+    border-top: 2px solid #ddd;
+    border-radius: 15%;
+    box-shadow: inset 0 8px 48px #ddd;
+    content: '';
+    display: block;
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    top: -10px;
+    bottom: -10px;
+    z-index: -1;
+}
+.cssButton a:visited {
+    color: #a7a7a7;
+}
+.cssButton a:hover {
+    color: hsl(30, 70%, 50%);
+}

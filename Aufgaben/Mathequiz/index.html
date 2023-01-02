@@ -3,40 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/buttons.css">
 
 </head>
 <body>
 <main>
-    <article class="flex">
+    <article>
         <section>
-            <h1>Ma-the-game</h1>
-        <div class>
-            <table>
-<thead aria-rowspan="3"><h1>Ma-the-Game</h1></thead>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>5</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                </tr>
-            </table>
+                <table>
+                    <thead aria-rowspan="3"><h1><span>T</span>he <span>B</span>ig <span>M</span>ath <span>T</span>heorie </h1></thead>
+                    <tr class="cssButtonRound">
+                        <td><a href="#">1</a></td>
+                        <td><a href="#">2</a></td>
+                        <td><a href="#">3</a></td>
+                    </tr>
+                    <tr class="cssButtonRound">
+                        <td><a href="#">4</a></td>
+                        <td><a href="#">5</a></td>
+                        <td><a href="#">6</a></td>
+                    </tr>
+                    <tr class="cssButtonRound">
+                        <td><a href="#">7</a></td>
+                        <td><a href="#">8</a></td>
+                        <td><a href="#">9</a></td>
+                    </tr>
+                    <tr>
+                        <td aria-rowspan="3" class="cssButton">
+                            <p>Frage:<input type="number" name="answer" id="answer" required></p>
+                        </td>
+                    </tr>
+                    <tr class="cssButton">
+                        <td><a href="#">Antwort einchecken</a></td>
+                        <td><a href="#" onclick="window.location.reload()">Spiel neu starten</a></td>
 
-        </div>
-        <div>
-        </div>
+                    </tr>
+                </table>
+
+            <div>
+            </div>
         </section>
     </article>
 </main>
 </body>
-<script src="mathescript.js"></script>
+<script src="script/mathescript.js"></script>
 </html>

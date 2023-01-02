@@ -1,0 +1,32 @@
+body{
+    padding: 0;
+    background: rgb(170,170,170);
+    background: radial-gradient(circle, rgba(170,170,170,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+table {
+    margin: auto;
+
+}
+section{
+    margin-top: 5%;
+}
+
+@font-face {
+    font-family: 'headline Font';
+    src: url('../fonts/70SdiscopersonaluseBold-w14z2.otf') format("opentype");
+}
+h1{
+    font-family: "headline Font";
+    text-align: center;
+    margin: 5px 0;
+    color: #383737;
+    text-shadow: 4px 3px 0 #c9c8c8;
+    font-size: 3vw;
+    /*license: Freeware, Non-Commercial*/
+    /*link: https://www.fontspace.com/70-s-disco-font-f90278*/
+}
+h1 span{
+    font-size: 4vw;
+    color: #000;
+}
