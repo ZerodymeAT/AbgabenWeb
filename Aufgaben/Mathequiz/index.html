@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style/buttons.css">
 
 </head>
-<body>
+<body onload="game()">
 <main>
     <article>
         <section>
@@ -28,19 +28,22 @@
                         <td><a href="#">8</a></td>
                         <td><a href="#">9</a></td>
                     </tr>
-                    <tr>
-                        <td aria-rowspan="3" class="cssButton">
-                            <p>Frage:<input type="number" name="answer" id="answer" required></p>
-                        </td>
+                    <tr class="cssButton">
+                        <td aria-rowspan="3" ><p id="question"></p>
+                        <label for="userMatheAnswer"></label>
+                            <input type="number" id="userMatheAnswer" placeholder="Deine Antwort" required></td>
                     </tr>
                     <tr class="cssButton">
-                        <td><a href="#">Antwort einchecken</a></td>
+                        <td><a href="#" id="btnUserAnswer" onclick="game()">Antwort einchecken</a></td>
+                    </tr>
+                    <tr class="cssButton">
                         <td><a href="#" onclick="window.location.reload()">Spiel neu starten</a></td>
-
                     </tr>
                 </table>
 
             <div>
+
+
             </div>
         </section>
     </article>
