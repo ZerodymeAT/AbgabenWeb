@@ -7,39 +7,40 @@
     <link rel="stylesheet" href="style/buttons.css">
 
 </head>
-<body onload="game(userAns)">
+<body onload="letTheShowBegin()">
 <main>
     <article>
         <section>
-                <table>
-                    <thead aria-rowspan="3"><h1><span>T</span>he <span>B</span>ig <span>M</span>ath <span>T</span>heorie </h1></thead>
-                    <tr class="cssButtonRound">
-                        <td><a href="#">1</a></td>
-                        <td><a href="#">2</a></td>
-                        <td><a href="#">3</a></td>
-                    </tr>
-                    <tr class="cssButtonRound">
-                        <td><a href="#">4</a></td>
-                        <td><a href="#">5</a></td>
-                        <td><a href="#">6</a></td>
-                    </tr>
-                    <tr class="cssButtonRound">
-                        <td><a href="#">7</a></td>
-                        <td><a href="#">8</a></td>
-                        <td><a href="#">9</a></td>
-                    </tr>
-                    <tr class="cssButton">
-                        <td aria-rowspan="3" ><p id="question"></p>
+            <table>
+                <thead aria-rowspan="3"><h1><span>T</span>he <span>B</span>ig <span>M</span>ath <span>T</span>heorie
+                </h1></thead>
+                <tr class="cssButtonRound">
+                    <td><a href="#" id="Level1">1</a></td>
+                    <td><a href="#" id="Level2">2</a></td>
+                    <td><a href="#" id="Level3">3</a></td>
+                </tr>
+                <tr class="cssButtonRound">
+                    <td><a href="#" id="Level4">4</a></td>
+                    <td><a href="#" id="Level5">5</a></td>
+                    <td><a href="#" id="Level6">6</a></td>
+                </tr>
+                <tr class="cssButtonRound">
+                    <td><a href="#" id="Level7">7</a></td>
+                    <td><a href="#" id="Level8">8</a></td>
+                    <td><a href="#" id="Level9">9</a></td>
+                </tr>
+                <tr class="cssButton">
+                    <td aria-rowspan="3"><a href="#" id="start" onclick="start()"></a>
                         <label for="userMatheAnswer"></label>
-                            <input type="number" id="userMatheAnswer" required></td>
-                    </tr>
-                    <tr class="cssButton">
-                        <td><a href="#" onclick="userAnswer(userAns), game(userAns)">Antwort einchecken</a></td>
-                    </tr>
-                    <tr class="cssButton">
-                        <td><a href="#" onclick="newGame()">Spiel neu starten</a></td>
-                    </tr>
-                </table>
+                        <input type="number" id="userMatheAnswer" required></td>
+                </tr>
+                <tr class="cssButton">
+                    <td><a href="#" onclick="userAnswer()">Antwort einchecken</a></td>
+                </tr>
+                <tr class="cssButton">
+                    <td><a href="#" onclick="newGame()">Spiel neu starten</a></td>
+                </tr>
+            </table>
 
             <div>
 
