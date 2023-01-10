@@ -8,17 +8,16 @@ let result;
 
 function comparisonWithUserInput() {
     userAns = userAnswer();
-
+    document.getElementById('userMatheAnswer').innerHTML = "";
     if (userAns === result) {
         level++;
-        alert("Yeha");
+
         levelbasedCalculation();
     } else gameOver();
-    }
+}
 
 function userAnswer() {
-    userAns = document.getElementById('userMatheAnswer');
-    return userAns;
+    return Number(document.getElementById('userMatheAnswer').value);
 }
 
 function levelbasedCalculation() {
@@ -61,6 +60,7 @@ function levelbasedCalculation() {
             console.log("Level: " + level + " Aufgabe: " + int1 + " * " + int2 + " + " + (int2 * 3) + " = " + result);
             break;
     }
+
     return result;
 }
 
