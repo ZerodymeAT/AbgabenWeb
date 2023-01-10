@@ -1,5 +1,5 @@
 'use strict';
-let level = 1;
+let level = 0;
 let lifes = 3;
 let userAns;
 let int1;
@@ -7,24 +7,14 @@ let int2;
 let result;
 
 function comparisonWithUserInput() {
-    userAnswer();
+    userAns = userAnswer();
 
     if (userAns === result) {
         level++;
         alert("Yeha");
-    } else if (userAns !== result){
-        if (lifes > 0){
-            lifes--;
-            alert("Noch " + lifes + " über");
-        } else gameOver();
+        levelbasedCalculation();
+    } else gameOver();
     }
-}
-
-function lifeCalculator() {
-    if (lifes > 0) {
-        return 1;
-    } else return 0;
-}
 
 function userAnswer() {
     userAns = document.getElementById('userMatheAnswer');
@@ -90,17 +80,20 @@ function newGame() {
 
 function letTheShowBegin() {
     if (level > 0) {
-        levelbasedCalculation();
         comparisonWithUserInput();
+        levelbasedCalculation();
     } else {
         document.getElementById('start').innerHTML = `Spiel starten`;
     }
 }
 
 function gameOver() {
-    console.log("Game Over")
+    if (lifes > 0){
+        lifes--;
+    } else alert("Game Over")
 }
 
 function start() {
-    return level = 1;
+    level = 1;
+    levelbasedCalculation();
 }
