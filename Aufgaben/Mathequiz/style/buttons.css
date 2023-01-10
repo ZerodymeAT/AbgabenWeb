@@ -25,7 +25,8 @@
 }
 .cssButtonRound a {
     background-color: #f7f7f7;
-    background-image: linear-gradient(#f7f7f7, #e7e7e7);
+    /*background-image: linear-gradient(#f7f7f7, #e7e7e7);*/
+    background-image: linear-gradient(#62d714, #3c9d41);
     border-radius: 50%;
     box-shadow: 0 3px 8px #aaa, inset 0 2px 3px #fff;
     color: #878787;
@@ -53,9 +54,7 @@
     bottom: -10px;
     z-index: -1;
 }
-.cssButtonRound a:visited {
-    color: #a7a7a7;
-}
+
 .cssButtonRound a:hover {
     color: hsl(30, 70%, 50%);
 }
@@ -75,8 +74,6 @@
     position: relative;
 }
 .cssButton td:before {
-    /*border-top: 1px solid #ddd;*/
-    border-bottom: 1px solid #fff;
     content: '';
     display: block;
     position: absolute;
@@ -85,7 +82,7 @@
     height: 1px;
     z-index: -1;
 }
-.cssButton a, p {
+.cssButton a {
     background-color: #f7f7f7;
     background-image: linear-gradient(#f7f7f7, #e7e7e7);
     border-radius: 15%;
@@ -101,7 +98,7 @@
     width: 250px;
     /*height: 44px;*/
 }
-.cssButton a:before, p:before {
+.cssButton a:before {
     background: #fff;
     border-top: 2px solid #ddd;
     border-radius: 15%;
@@ -115,9 +112,14 @@
     bottom: -10px;
     z-index: -1;
 }
-.cssButton a:visited {
-    color: #a7a7a7;
-}
+
 .cssButton a:hover {
     color: hsl(30, 70%, 50%);
 }
+
+/*ROT*/
+/*background-image: linear-gradient(#d71414, #9d3c3c);*/
+
+/*Grün*/
+/*background-image: linear-gradient(#62d714, #3c9d41);*/
+
