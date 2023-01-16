@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>The Big Math Theorie</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/buttons.css">
 
@@ -11,49 +11,41 @@
 <main>
     <article>
         <section>
-            <table>
-                <thead aria-rowspan="3"><h1><span>T</span>he <span>B</span>ig <span>M</span>ath <span>T</span>heorie
-                </h1></thead>
-                <tr class="cssButtonRound">
-                    <td><a href="#" id="Level1">1</a></td>
-                    <td><a href="#" id="Level2">2</a></td>
-                    <td><a href="#" id="Level3">3</a></td>
-                </tr>
-                <tr class="cssButtonRound">
-                    <td><a href="#" id="Level4">4</a></td>
-                    <td><a href="#" id="Level5">5</a></td>
-                    <td><a href="#" id="Level6">6</a></td>
-                </tr>
-                <tr class="cssButtonRound">
-                    <td><a href="#" id="Level7">7</a></td>
-                    <td><a href="#" id="Level8">8</a></td>
-                    <td><a href="#" id="Level9">9</a></td>
-                </tr>
-                <tr class="cssButtonRound ">
-                    <td><a href="#" id="Life1"></a></td>
-                    <td><a href="#" id="Life2"></a></td>
-                    <td><a href="#" id="Life3"></a></td>
-                </tr>
-                <tr class="cssButton">
-                    <td aria-rowspan="3"><a href="#" id="start" onclick="start()"></a>
-                        <label for="userMatheAnswer"></label>
-                        <input type="number" name="answercheckin" id="userMatheAnswer"></td>
-                </tr>
-                <tr class="cssButton">
-                    <td><a href="#" onclick="comparisonWithUserInput()">Antwort einchecken</a></td>
-                </tr>
-                <tr class="cssButton">
-                    <td><a href="#" onclick="newGame()">Spiel neu starten</a></td>
-                </tr>
-            </table>
-
-            <div>
-                <p id="Level12">Beispieltext</p>
-
-
+            <div class="firstDivStyle">
+                <h1><span>T</span>he <span>B</span>ig <span>M</span>ath <span>T</span>heorie</h1>
+            <div class="gridContainer roundbutton singleDivStyling">
+                <div class="num1 element"><p id="Level1">1</p></div>
+                <div class="num2 element"><p id="Level2">2</p></div>
+                <div class="num3 element"><p id="Level3">3</p></div>
+                <div class="num4 element"><p id="Level4">4</p></div>
+                <div class="num5 element"><p id="Level5">5</p></div>
+                <div class="num6 element"><p id="Level6">6</p></div>
+                <div class="num7 element"><p id="Level7">7</p></div>
+                <div class="num8 element"><p id="Level8">8</p></div>
+                <div class="num9 element"><p id="Level9">9</p></div>
+            </div>
+            <div class="roundbutton singleDivStyling">
+                <div class="element"><p id="Life1"></p></div>
+                <div class="element"><p id="Life2"></p></div>
+                <div class="element"><p id="Life3"></p></div>
+            </div>
+            <div class="textbutton ">
+                <div class="">
+                    <p class="singleDivStyling" id="start" onclick="start()"></p>
+                    <label for="userMatheAnswer"></label>
+                    <input type="number" name="answercheckin" id="userMatheAnswer">
+                </div>
+            </div>
+            <div class="textbutton singleDivStyling">
+                <p onclick="comparisonWithUserInput()">Antwort einchecken</p>
+            </div>
+            <div class="textbutton singleDivStyling">
+                <p onclick="newGame()">Spiel neu starten</p>
+            </div>
             </div>
         </section>
     </article>
+
 </main>
 </body>
 <script src="script/mathescript.js"></script>

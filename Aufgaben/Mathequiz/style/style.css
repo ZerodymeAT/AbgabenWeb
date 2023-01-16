@@ -1,13 +1,9 @@
 body{
-    padding: 0;
+    margin: 0;
     background: rgb(170,170,170);
     background: radial-gradient(circle, rgba(170,170,170,1) 0%, rgba(255,255,255,1) 100%);
 }
 
-table {
-    margin: auto;
-
-}
 section{
     margin-top: 5%;
 }
@@ -20,7 +16,7 @@ h1{
     font-family: "headline Font";
     text-align: center;
     margin: 5px 0;
-    color: #383737;
+    color: #000;
     text-shadow: 4px 3px 0 #c9c8c8;
     font-size: 3vw;
     /*license: Freeware, Non-Commercial*/
@@ -30,3 +26,56 @@ h1 span{
     font-size: 4vw;
     color: #000;
 }
+
+.firstDivStyle{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto 0 auto;
+
+}
+.singleDivStyling{
+    justify-content: center;
+    margin: auto;
+    }
+
+input{
+    border:none;
+    outline:none;
+    display:inline-block;
+    height:34px;
+    vertical-align:middle;
+    text-align: center;
+    border-radius:22px;
+    width:250px;
+    box-sizing:border-box;
+    padding:0 18px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    /*margin: 0;*/
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+.gridContainer {  display: grid;
+    grid-template-columns: 94px 94px 94px;
+    grid-template-rows: 94px 94px 94px;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "num1 num2 num3"
+    "num4 num5 num6"
+    "num7 num8 num9";
+}
+.num1 { grid-area: num1; }
+.num2 { grid-area: num2; }
+.num3 { grid-area: num3; }
+.num4 { grid-area: num4; }
+.num5 { grid-area: num5; }
+.num6 { grid-area: num6; }
+.num7 { grid-area: num7; }
+.num8 { grid-area: num8; }
+.num9 { grid-area: num9; }
