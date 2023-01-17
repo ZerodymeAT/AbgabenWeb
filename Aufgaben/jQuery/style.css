@@ -1,0 +1,44 @@
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+.colordiv{
+    border-radius: 360px;
+    margin: 15px;
+    height: 100px;
+    width: 200px;
+}
+.div1{
+    /*display: flex;*/
+    /*justify-content: center;*/
+
+    width: 430px;
+    background: #3c9d41;
+    /*align-items: center;*/
+
+}
+.div2{
+    background: #ee9900;
+}
+.div3{
+    background: #00a7ee;
+}
+body{
+    margin: 0;
+    text-align: center;
+}
+input, button{
+    outline:none;
+    cursor: pointer;
+    display:inline-block;
+    height:34px;
+    vertical-align:middle;
+    text-align: center;
+    border-radius:22px;
+    width:150px;
+    box-sizing:border-box;
+    padding:0 18px;
+}

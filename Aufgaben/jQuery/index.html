@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Übung jQuery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div>
+    <h1 id="headline">Das ist die EINE Überschrift</h1>
+    <p>Alle drei Absätze haben den gleichen Inhalt</p>
+    <p id="changeme">Alle drei Absätze haben den gleichen Inhalt</p>
+    <p>Alle drei Absätze haben den gleichen Inhalt</p>
+    <label for="textfuerdeneinenButton">der eine Button</label>
+    <input type="text" name="einemButton" id="textfuerdeneinenButton" placeholder="welchen es gilt zu ">
+    <button type="button" id="textbutton" onclick="goingdeep()">Drücken</button>
+    <div class="flex">
+        <div class="flex colordiv div1" id="farbigesElement"><p id="p4divElement1"></p></div>
+    </div>
+</div>
+<div class="flex">
+    <div class="flex colordiv div2" id="elementEins"></div>
+    <div class="flex colordiv div3" id="elementZwei"></div>
+</div>
+<div class="flex" id="showme"><button type="button" class="button" onclick="buttonChanger()">Show me</button></div>
+
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</body>
+</html>
