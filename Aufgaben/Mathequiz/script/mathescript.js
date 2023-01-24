@@ -1,7 +1,6 @@
 'use strict';
 let level = 0;
-let lifes = 4;
-const maxLifes = lifes;
+let lifes = 3;
 let userAns;
 let int1;
 let int2;
@@ -9,22 +8,28 @@ let result;
 let passed = 0;
 
 function comparisonWithUserInput() {
-    userAns = userAnswer();
+    userAns = Number(document.getElementById('userMatheAnswer').value);
+    if (userAns === 0 && userAns !== result){
+        alert("Kein Userinput eingegeben");
+        return
+    }
+
     document.getElementById('userMatheAnswer').value = "";
     if (userAns === result) {
+        if (level === 9){
+            alert("Spiel gewonnen!");
+            newGame();
+        }
         level++;
         passed++;
         levelbasedCalculation();
-    } else gameOver();
+    } else {
+        lifes--;
+        stylingLifes();
+    }
 }
-
-function userAnswer() {
-    return Number(document.getElementById('userMatheAnswer').value);
-}
-
 function levelbasedCalculation() {
     stylingLevel();
-    stylingLifes();
     int1 = getRandomInt();
     int2 = getRandomInt();
     if (int2 > int1) {
@@ -37,7 +42,6 @@ function levelbasedCalculation() {
         case 1:
         case 5:
             document.getElementById("start").innerHTML = textbaustein + int1 + " + " + int2;
-            // document.getElementById("Level"+level).style.color = 'red';
             result = int1 + int2;
             console.log("Level: " + level + " Aufgabe: " + int1 + " + " + int2 + " = " + result + " Lifes: " + lifes);
             break;
@@ -64,6 +68,8 @@ function levelbasedCalculation() {
             result = int1 * int2 + (int2 * 3);
             console.log("Level: " + level + " Aufgabe: " + int1 + " * " + int2 + " + " + (int2 * 3) + " = " + result + " Lifes: " + lifes);
             break;
+        default:
+
     }
 }
 
@@ -71,16 +77,23 @@ function stylingLevel() {
     if (passed > 0) {
         document.getElementById("Level" + passed).style.backgroundImage = 'linear-gradient(#96f796, #96e796)';
         document.getElementById("Level" + level).style.backgroundImage = 'linear-gradient(#f79696, #e79696)';
-
     } else {
         document.getElementById("Level" + level).style.backgroundImage = 'linear-gradient(#f79696, #e79696)';
     }
-
 }
 
 function stylingLifes() {
-    for (let i = maxLifes; i > lifes; i--) {
-        document.getElementById("Life" + i).style.backgroundImage = 'linear-gradient(#62d714, #3c9d41)';
+    switch (lifes) {
+        case 2:
+            document.getElementById("Life3").style.backgroundImage = 'linear-gradient(#d71414, #9d3c3c)';
+            break;
+        case 1:
+            document.getElementById("Life2").style.backgroundImage = 'linear-gradient(#d71414, #9d3c3c)';
+            break;
+        case 0:
+            document.getElementById("Life1").style.backgroundImage = 'linear-gradient(#d71414, #9d3c3c)';
+            alert("Game Over du Noob, spiel wird neu gestartet");
+            newGame();
     }
 }
 
@@ -100,25 +113,22 @@ function newGame() {
 
 function letTheShowBegin() {
     if (level > 0) {
-        comparisonWithUserInput();
         levelbasedCalculation();
     } else {
         document.getElementById('start').innerHTML = `Spiel starten`;
     }
 }
 
-function gameOver() {
-    if (lifes >= 1) {
-        lifes--;
-    } else {
-        alert("Game Over du Noob, spiel wird neu gestartet");
-        newGame();
-    }
+function lifestart() {
+    document.getElementById("Life1").style.backgroundImage = 'linear-gradient(#62d714, #3c9d41)';
+    document.getElementById("Life2").style.backgroundImage = 'linear-gradient(#62d714, #3c9d41)';
+    document.getElementById("Life3").style.backgroundImage = 'linear-gradient(#62d714, #3c9d41)';
 }
 
 function start() {
     if (level === 0) {
         level = 1;
+        lifestart();
         letTheShowBegin();
     } else letTheShowBegin();
 }

@@ -1,11 +1,10 @@
 body{
-    margin: 0;
     background: rgb(170,170,170);
     background: radial-gradient(circle, rgba(170,170,170,1) 0%, rgba(255,255,255,1) 100%);
 }
 
 section{
-    margin-top: 5%;
+    margin-top: 5px;
 }
 
 @font-face {
@@ -18,12 +17,14 @@ h1{
     margin: 5px 0;
     color: #000;
     text-shadow: 4px 3px 0 #c9c8c8;
-    font-size: 3vw;
+    /*font-size: min(max(3vw), 48px);*/
+    font-size: clamp(1.5rem, 3vw, 2rem);
+
     /*license: Freeware, Non-Commercial*/
     /*link: https://www.fontspace.com/70-s-disco-font-f90278*/
 }
 h1 span{
-    font-size: 4vw;
+    font-size: clamp(2rem, 4vw, 2.5rem);
     color: #000;
 }
 
