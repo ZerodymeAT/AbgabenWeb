@@ -48,7 +48,7 @@
                         <div class="form-group">
                             <label for="inputUsername" class="sr-only">Username</label>
                             <input type="text" id="inputUsername" class="form-control" placeholder="Enter Username"
-                                   name="name" required autofocus
+                                   name="username" required autofocus
                                    value="<?php if (isset($_POST['username'])) echo $_POST['username'] ?>">
                             <?php if (isset($Response['username']) && !empty($Response['username'])): ?>
                                 <small class="text-danger"><?php echo $Response['username']; ?></small>

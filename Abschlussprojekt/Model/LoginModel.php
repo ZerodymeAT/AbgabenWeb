@@ -1,7 +1,4 @@
 <?php
-namespace Abschlussprojekt_Web\Model;
-use Db;
-
 require_once(__dir__ . '/Db.php');
 
 class LoginModel extends Db
