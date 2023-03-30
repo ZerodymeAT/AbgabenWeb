@@ -7,7 +7,7 @@
   <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">PHP Übung</a>
+        <a class="navbar-brand" href="#">Zahlenraten</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,8 +22,12 @@
               </li>
             <?php elseif (isset($_SESSION['auth_status'])) : ?>
               <li class="nav-item">
-                <a href="<?php echo BASE_URL; ?>index.php" class="nav-link">Dashboard</a>
+                <a href="<?php echo BASE_URL; ?>index.php" class="nav-link">Scoreboard</a>
               </li>
+            <li class="nav-item">
+                <a href="<?php echo BASE_URL; ?>game.php" class="nav-link">Game</a>
+            </li>
+
             <?php endif; ?>
             <?php if (isset($_SESSION['auth_status'])) : ?>
               <li class="nav-item">

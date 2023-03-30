@@ -4,26 +4,12 @@ require_once('controller/Controller.php');
 require('./inc/nav.php');
 ?>
 <main class="container py-4 mt-5">
-
-    <form method="post" action="logic/logicInsert.php" class="mb-4">
-        <div class="mb-3">
-            <label for="inputMail" class="form-label">Email address</label>
-            <input type="email" name="inputMail" class="form-control" id="inputMail">
-        </div>
-        <div class="mb-3">
-            <label for="inputName" class="form-label">Name</label>
-            <input type="text" name="inputName" class="form-control" id="inputName">
-        </div>
-
-        <button type="submit" class="btn btn-dark">Speichern</button>
-    </form>
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">mail</th>
-                <th scope="col">name</th>
+                <th scope="col">Unsername</th>
                 <th scope="col">created</th>
                 <th>#</th>
             </tr>
@@ -35,8 +21,7 @@ require('./inc/nav.php');
                 ?>
                 <tr>
                     <td> <?= $row['id'] ?> </td>
-                    <td> <?= $row['name'] ?> </td>
-                    <td> <?= $row['email'] ?> </td>
+                    <td> <?= $row['username'] ?></td>
                     <td> <?= $row['created_at'] ?> </td>
                     <td>
                         <a href="detail.php?id=<?= $row['id'] ?>" class="btn btn-dark">edit</a>

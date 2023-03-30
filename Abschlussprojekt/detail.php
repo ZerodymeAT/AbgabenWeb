@@ -1,8 +1,10 @@
-<!doctype html>
-<html lang="en">
 <?php
+require_once('controller/Controller.php');
+require('./inc/nav.php');
+
 include_once ('inc/head.inc.php')
 ?>
+
 <body>
 <main class="container py-4">
 <?php
@@ -14,7 +16,7 @@ while($row = $statement->fetch()) { ?>
         <input type="hidden" name="updateId" value="<?= $row['id'] ?>">
         <div class="mb-3">
             <label for="inputMail" class="form-label">Email address</label>
-            <input type="email" name="inputMail" class="form-control" id="inputMail" value="<?= $row['mail'] ?>">
+            <input type="email" name="inputMail" class="form-control" id="inputMail" value="<?= $row['email'] ?>">
         </div>
         <div class="mb-3">
             <label for="inputName" class="form-label">Name</label>

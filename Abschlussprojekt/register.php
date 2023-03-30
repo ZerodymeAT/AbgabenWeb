@@ -13,7 +13,7 @@
             <?php if (isset($Response['status']) && !$Response['status']) : ?>
                 <br>
                 <div class="alert alert-danger" role="alert">
-                    <span><B>Oops!</B> Some errors occurred in your form.</span>
+                    <span><B>Öha!</B> Do hot's wos bei dem Zeig wost eigem host.</span>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true" class="text-danger">&times;</span>
                     </button>

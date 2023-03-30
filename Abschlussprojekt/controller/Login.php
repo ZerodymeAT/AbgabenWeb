@@ -10,7 +10,7 @@ class Login extends Controller
 
     public function __construct()
     {
-        if (isset($_SESSION['auth_status'])) header("Location: dashboard.php");
+        if (isset($_SESSION['auth_status'])) header("Location: scoreboard.php");
         $this->loginModel = new LoginModel();
     }
 
@@ -28,7 +28,7 @@ class Login extends Controller
                 );
                 $_SESSION['data'] = $EmailRecords['data'];
                 $_SESSION['auth_status'] = true;
-                header("Location: dashboard.php");
+                header("Location: scoreboard.php");
 
             }
             $Response = array(

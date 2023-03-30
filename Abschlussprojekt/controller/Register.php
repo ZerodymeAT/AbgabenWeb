@@ -11,7 +11,7 @@ class Register extends Controller
 
     public function __construct()
     {
-        if (isset($_SESSION['auth_status'])) header("Location: dashboard.php");
+        if (isset($_SESSION['auth_status'])) header("Location: scoreboard.php");
         $this->registerModel = new RegisterModel();
     }
 
@@ -41,7 +41,7 @@ class Register extends Controller
             return $Error;
 
         }
-        if (preg_match('/[^A-Za-z\s]/', $username)) {
+        if (preg_match('/[^A-Za-z0-9\s]/', $username)) {
             $Error['phone'] = 'Only Alphabets are allowed';
             return $Error;
         }
@@ -68,7 +68,7 @@ class Register extends Controller
         }
         $_SESSION['data'] = $Data;
         $_SESSION['auth_status'] = true;
-        header("Location: dashboard.php");
+        header("Location: scoreboard.php");
         return true;
     }
 }
