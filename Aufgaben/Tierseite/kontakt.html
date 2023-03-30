@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Testpage 4 CodersBay">
+    <title>Collies vom Kürnberg - Kontakt</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/HeadNavFoot.css">
+    <link rel="stylesheet" href="style/grid.css">
+    <link rel="stylesheet" href="style/kontakt.css">
+</head>
+<body>
+<header>
+<nav class="menu">
+    <ul class="menuItems">
+        <li class="menuStart">
+            <a href="index.html">Home</a>
+        </li>
+        <li>
+            <a href="awurf.html">A-Wurf</a>
+        </li>
+        <li>
+            <a href="#">Zucht</a>
+        </li>
+        <li class="menuEnd">
+            <a href="kontakt.html">Kontakt</a>
+        </li>
+    </ul>
+</nav>
+</header>
+<main>
+<article>
+    <form action="" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Kontaktformular</legend>
+            <p>Solltest du Interesse an einem Welpen haben, kannst du dich hier bei mir melden:</p>
+            <div class="formFlex">
+                <label for="sex">Geschlächt</label>
+                <select id="sex" name  ="sex">
+                    <option value="Maennlich">Männlich</option>
+                    <option value="Weiblich">Weiblich</option>
+                    <option value="Divers">Divers</option>
+                    <option value="Unbestimmt">Unbestimmt</option>
+                </select>
+            </div>
+            <div class="formFlex">
+                    <label for="Vorname">Vorname</label>
+                    <input type="text" name="Vorname" id="Vorname" placeholder="Dein Vorname" required>
+                </div>
+            <div class="formFlex">
+                <label for="Nachname">Nachname</label>
+                <input type="text" name="Nachname" id="Nachname" placeholder="Dein Nachname" required>
+            </div>
+            <div class="formFlex">
+                <label for="Mailadresse">Mailadresse</label>
+                <input type="email" name="Mailadresse" id="Mailadresse" placeholder="Mail@dre.se" required>
+            </div>
+            <div class="formFlex">
+                <label for="Telefon">Telefonnummer</label>
+                <input type="tel" name="Telefon" id="Telefon" placeholder="0043/123 456">
+            </div>
+            <div class="formFlex">
+                <label for="KnowHow">Erfahrung mit Hunden</label>
+                <input type="range" name="Knowhow" id="KnowHow" min="1" max="10" step="1" value="1">
+            </div>
+            <div class="formFlex">
+                <label for="Alter">Alter</label>
+                <input type="date" name="Alter" id="Alter">
+            </div>
+            <div class="formFlex" style="margin-bottom: 0px">
+                <label for="AZkommen">Arbeitszeiten</label><label for="AZgehen"></label>
+                <p>Von</p>
+                <input type="time" name="AZkommen" id="AZkommen">
+                <p>Bis</p>
+                <input type="time" name="AZgehen" id="AZgehen">
+            </div>
+            <div class="formFlexAZ">
+                <table class="tabelleKontakt">
+                    <tr>
+                        <td>Montag</td>
+                        <td>Dienstag</td>
+                        <td>Mittwoch</td>
+                        <td>Donnerstag</td>
+                        <td>Freitag</td>
+                        <td>Samstag</td>
+                        <td>Sonntag</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="Montag" name="Montag">
+                        <label for="Montag"></label></td>
+                        <td><input type="checkbox" id="Dienstag" name="Dienstag">
+                        <label for="Dienstag"></label></td>
+                        <td><input type="checkbox" id="Mittwoch" name="Mittwoch">
+                        <label for="Mittwoch"></label></td>
+                        <td><input type="checkbox" id="Donnerstag" name="Donnerstag">
+                        <label for="Donnerstag"></label></td>
+                        <td><input type="checkbox" id="Freiag" name="Freiag">
+                        <label for="Freiag"></label></td>
+                        <td><input type="checkbox" id="Samstag" name="Samstag">
+                        <label for="Samstag"></label></td>
+                        <td><input type="checkbox" id="Sonntag" name="Sonntag">
+                        <label for="Sonntag"></label></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="formFlex">
+                <label for="Wohnsituation">Wohnsituation</label>
+                <input type="text" list="Wohnsituationen" name="Wohnsituation" id="Wohnsituation">
+                <datalist id="Wohnsituationen">
+                    <option value="Haus mit Garten 100 m²+" />
+                    <option value="Haus mit Garten weniger als 100 m²" />
+                    <option value="Wohnung klein <=50 m²" />
+                    <option value="Wohnung mittel 51-99 m²" />
+                    <option value="Wohnung groß >100 m²" />
+                </datalist>
+            </div>
+            <div class="formFlex">
+                <label for="Motivation">Motivation</label>
+                <textarea class="textMotivation" name="Motivation" id="Motivation" placeholder="Als verantwordungsvolle Züchterin, möchte ich sicher gehen, dass die Tiere in guter Obhut sind, schreibe hier deine Erfahrungen mit Hunden und deine ev. Ziele"></textarea>
+            </div>
+            <div class="formFlexCB">
+                Kontaktaufnahme erwünscht: &nbsp;
+                <div>
+                    <label for="CheckY">Ja</label>
+                    <input type="radio" name="Kontakt" id="CheckY" checked required>
+                </div>
+                <div>
+                   <label for="CheckN">Nein</label>
+                    <input type="radio" name="Kontakt" id="CheckN">
+                </div>
+            </div>
+            <div>
+                <button type="submit">Absenden</button>
+                <button type="reset">Reset</button>
+            </div>
+        </fieldset>
+    </form>
+
+</article>
+</main>
+<footer>&copy; by Bätter-Solutions - Origin:&nbsp<a href="http://kuernberghunde.at" target="_blank">Kürnberghunde.at </a>&nbspzuletzt aktualisiert am 2022-09-19</footer>
+</body>
+</html>

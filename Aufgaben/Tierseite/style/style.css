@@ -1,0 +1,125 @@
+@font-face{
+    font-family: 'Courgette-Regular';
+    src: url("../fonts/Courgette-Regular.ttf") format("truetype");
+}
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+
+}
+main {
+    z-index: 1;
+    padding-bottom: 25px;
+}
+.headlines{
+    font-family: 'Courgette-Regular', sans-serif;
+    color: #103B30FF;
+    text-shadow: rgb(218, 243, 214) 2px 1px 3px;
+}
+h2{
+    font-size: 20px;
+    text-align: center;
+}
+h3 {
+    margin-right: 30px;
+}
+.pt { padding-top: 5%;}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    flex-wrap: wrap;
+    gap: 25px;
+}
+article {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+.border{
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
+    box-shadow: 1px 1px 6px #646464;
+
+}
+.borderPics{
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+    box-shadow: 1px 1px 6px #646464;
+}
+.textpassagen{
+    flex: 1 60 150px;
+    padding: 10px;
+
+
+}
+
+.video {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.videosettings{
+    width: 560px;
+    max-width: 100%;
+    height: 315px;
+    padding: 10px 30px 10px 0;
+}
+.rude{
+    font-size: 20px ;
+    font-style: inherit;
+    font-variant: small-caps;
+    padding: 0 0 0 2em;
+    margin: 0;
+}
+.awardStatus{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.awardStatus p{
+    font-family: 'Courgette-Regular', sans-serif;
+    background-color: #D7FFC2ED;
+    width: 300px;
+    font-weight: bolder;
+    word-spacing: 5px;
+    color: #103b30;
+    text-shadow: rgb(90, 110, 89) 2px 1px 3px;
+    padding: 10px;
+    margin: 10px;
+    border: 5px solid;
+    border-radius: 25px;
+    border-color: #103B30;
+    text-align: center;
+    box-shadow: 2px 3px 5px #103b30 inset;
+}
+.imgFlex{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.imgSize{
+    max-width: 100%;
+    height: 250px;
+    border-radius: 20%;
+}
+.tableStyling {
+    display: flex;
+    justify-content: center;
+}
+.position{
+    position: relative;
+
+}
+.position figcaption {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255,255,255, 0.75);
+    box-sizing: border-box;
+}

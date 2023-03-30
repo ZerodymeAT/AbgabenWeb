@@ -1,0 +1,38 @@
+form{
+    max-width: 600px;
+    margin: 20px auto;
+}
+input{
+    padding: 5px;
+    border: 1px solid #cacaca;
+}
+.formFlex{
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.textMotivation{
+    /* mindestbreiten sind etwas problematisch bei Mobilansichten */
+    min-width: 400px;
+    min-height: 80px;
+}
+button{
+    float: right;
+    margin: 0 2px;
+}
+.tabelleKontakt{
+    font-size: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+}
+.formFlexAZ{
+    margin-bottom: 15px;
+}
+.formFlexCB{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+}

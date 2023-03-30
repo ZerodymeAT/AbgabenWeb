@@ -1,0 +1,13 @@
+body{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 6% 0px;
+    grid-template-areas:
+    "headline headline headline"
+    ". inhalt ."
+    "fuss fuss fuss";
+}
+header{grid-area: headline;}
+main{grid-area: inhalt;}
+footer{grid-area: fuss;}
