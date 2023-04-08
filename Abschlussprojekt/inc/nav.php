@@ -22,7 +22,7 @@
               </li>
             <?php elseif (isset($_SESSION['auth_status'])) : ?>
               <li class="nav-item">
-                <a href="<?php echo BASE_URL; ?>index.php" class="nav-link">Scoreboard</a>
+                <a href="<?php echo BASE_URL; ?>scoreboard.php" class="nav-link">Scoreboard</a>
               </li>
             <li class="nav-item">
                 <a href="<?php echo BASE_URL; ?>game.php" class="nav-link">Game</a>

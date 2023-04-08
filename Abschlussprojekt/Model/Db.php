@@ -1,10 +1,10 @@
 <?php
 class Db
 {
-    protected $dbName = 'otterbaeck';
-    protected $dbHost = 'codersbay-nation.c9mh1sytq7cn.eu-central-1.rds.amazonaws.com:3306';
+    protected $dbName = 'zahlenraten';
+    protected $dbHost = 'localhost:3306';
     protected $dbUser = 'root';
-    protected $dbPass = 'codersbayroot';
+    protected $dbPass = '';
     protected $dbHandler, $dbStmt;
 
 
