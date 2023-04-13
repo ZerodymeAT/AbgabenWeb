@@ -1,0 +1,56 @@
+:root {
+    --grey: #494949;
+    --white: #FFF;
+    --black: #000000;
+    --nearblack: #111;
+    --darkgreen: #347a2c;
+    --darkred: #bd4545;
+    --lightblue: #22bdff;
+}
+
+body {
+    background: var(--lightblue);
+}
+
+/*Styling Navbar*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--grey);
+    border-radius: 25px;
+}
+
+.menu {
+    float: left;
+}
+.time{
+    float: right;
+    color: var(--white);
+}
+
+li a {
+    display: block;
+    color: var(--white);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: var(--nearblack);
+}
+
+.ende{
+    text-align: right;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
