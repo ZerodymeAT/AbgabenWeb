@@ -10,13 +10,14 @@
 
 <body>
 <header>
-        <h1>Willkommen in der Spiele Bibliothek</h1>
-        <p><?php echo "Was möchtest du tun?" ?></p>
+    <h1>Willkommen in der Spiele Bibliothek</h1>
+    <p><?php echo "Was möchtest du tun?" ?></p>
 </header>
 <main>
     <article>
         <section>
-            <a href="score.php" title="Hier sehen Sie alle High Scores der Spieler">High Scores</a>
+            <a href="../games/datenbank/dbSelect.php" title="Hier sehen Sie alle High Scores der Spieler">High
+                Scores</a>
         </section>
         <section>
             <h2>

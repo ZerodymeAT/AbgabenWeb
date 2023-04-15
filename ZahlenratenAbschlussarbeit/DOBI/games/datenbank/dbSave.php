@@ -14,9 +14,9 @@ $zahl = $_POST['zahl'];
 $trys_tried = $_POST['trys_tried'];
 $trys_had = $_POST['trys_had'];
 $won = $_POST['won'];
-echo "TESTATRSDASDSAD" ;
-/* wird wahrscheinlich nicht benötigt */
-if ($won) {
+
+
+if ($won == "true") {
     $won = 1;
 } else {
     $won = 0;

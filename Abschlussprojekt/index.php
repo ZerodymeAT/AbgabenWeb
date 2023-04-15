@@ -10,7 +10,7 @@
     <div class="row justify-content-center mt-5">
         <div class="col-xs-12 col-xl-6 center-align center-block">
             <?php if (isset($Response['status']) && !$Response['status']) : ?>
-                <div class="alert alert-danger" role="alert">
+                <div class="errorBox alert-danger" role="alert">
                     <span><B>Oops!</B> Invalid Credentials Used.</span>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true" class="text-danger">&times;</span>

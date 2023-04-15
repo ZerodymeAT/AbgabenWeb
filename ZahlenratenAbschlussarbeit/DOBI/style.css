@@ -7,13 +7,16 @@
     --lightblue: #22bdff;
 }
 
+
 body {
     padding: 0;
     margin: 0;
 }
+
 article {
     margin: 15px;
 }
+
 section {
     background-color: var(--grey);
     color: var(--white);
@@ -21,6 +24,7 @@ section {
     border-radius: 10px;
     padding: 10px;
 }
+
 header {
     background-color: var(--grey);
     color: var(--white);
@@ -31,13 +35,16 @@ header {
     margin: 0;
     padding: 10px;
 }
-a, a:visited{
+
+a, a:visited {
     color: var(--lightblue);
     font-size: 24px;
 }
+
 h2 {
     margin: 0;
 }
+
 .form-column {
     background-color: var(--grey);
     color: var(--white);
@@ -47,62 +54,134 @@ h2 {
     margin: 10px;
     padding: 10px;
 }
+
 .reset {
     background-color: var(--darkred);
 }
+
 .submit {
     background-color: var(--darkgreen);
 }
+
 button {
     margin: 10px;
     padding: 5px 10px;
     border-radius: 15px;
 }
+
 .border-1 {
     padding: 10px;
     border: solid 2px var(--grey);
 }
+
 .right {
     justify-content: end;
     display: flex;
 }
+
 .half {
     width: 50vw;
 }
+
 .center {
     display: flex;
     justify-content: center;
 }
+
 p {
     margin: 5px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 
 /* Pfeile bei den Input Buttons von numbers entfernen */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+
+table {
+    border: 1px solid var(--white);
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+}
+
+table tr {
+    background-color: var(--white);
+    border: 1px solid var(--grey);
+    padding: .35em;
+}
+
+table th, table td {
+    padding: .625em;
+    text-align: center;
+}
+
+table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 601px) {
+    tr:nth-child(2n+2) {
+        background-color: var(--grey);
+        color: var(--white);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        border: 0;
+    }
+
+    table caption {
+        font-size: 1.3em;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table tr {
+        border-bottom: 3px solid var(--white);
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    table td {
+        border-bottom: 1px solid var(--white);
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+}

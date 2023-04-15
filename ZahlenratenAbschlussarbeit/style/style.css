@@ -1,16 +1,17 @@
 :root {
     --grey: #494949;
     --white: #FFF;
-    --black: #000000;
     --nearblack: #111;
-    --darkgreen: #347a2c;
-    --darkred: #bd4545;
+    --correctAnswer: #347a2c;
     --lightblue: #22bdff;
+    --errorRed: #f44336;
+    --hintBoxBG: #f4c836;
 }
 
 body {
     background: var(--lightblue);
 }
+
 
 /*Styling Navbar*/
 ul {
@@ -20,6 +21,10 @@ ul {
     overflow: hidden;
     background-color: var(--grey);
     border-radius: 25px;
+}
+
+.userInputButton{
+    display: flex;
 }
 
 .menu {
@@ -40,6 +45,36 @@ li a {
 
 li a:hover {
     background-color: var(--nearblack);
+}
+
+.errorBox, .msgBoxHint{
+    padding: 20px;
+    color: var(--white);
+}
+
+.errorBoxBG {
+    background-color: var(--errorRed);
+}
+.msgBoxHintBG{
+    background-color: var(--hintBoxBG);
+}
+.msgBoxAnswerCorrect{
+    background-color: var(--correctAnswer);
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: var(--nearblack);
 }
 
 .ende{

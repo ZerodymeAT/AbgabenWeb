@@ -80,11 +80,16 @@
                 <button class="submit" type="button" onclick="checkAnswer()" id="user_answer_button">
                     Zahl überprüfen</button>
                 <button onclick="anDatenbankSchicken()" id="reload_button" class="reset" style="display: none">
-                    Neues Spiel</button>
+                    Speichern, Neues Spiel</button>
             </div>
         </section>
     </article>
 </main>
+<section>
+<footer>
+    <a href="../../view/index.php" title="Hier kommen Sie zurück auf die Index Seite">Nach Hause telefonieren</a>
+</footer>
+</section>
 <script
     src="https://code.jquery.com/jquery-3.6.4.js"
     integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="

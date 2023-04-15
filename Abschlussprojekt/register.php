@@ -12,7 +12,7 @@
         <div class="col-xs-12 col-xl-6 center-align center-block">
             <?php if (isset($Response['status']) && !$Response['status']) : ?>
                 <br>
-                <div class="alert alert-danger" role="alert">
+                <div class="errorBox alert-danger" role="alert">
                     <span><B>Öha!</B> Do hot's wos bei dem Zeig wost eigem host.</span>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true" class="text-danger">&times;</span>

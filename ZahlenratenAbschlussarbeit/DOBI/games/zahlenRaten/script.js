@@ -5,7 +5,6 @@ let trys = 11
 let trys_had = 0
 let won = false
 
-
 /*
 Hier wird der LocalStorage überprüft, ob bereits ein Spieler Name existiert
 */
@@ -49,17 +48,17 @@ function getMinAndMaxNumber() {
 }
 
 function checkMinAndMaxNumberFromUserInput(max, min) {
+
     if ((max - min) < 1000) {
         alert('Zahlen müssen mindestens um 1.000 auseinander liegen!');
     } else {
         if ((max - min) > 9999) {
             trys += 3
-            trys_had = trys
         }
+        trys_had = trys
         setElementdisplayNone("number_input");
         setElementdisplayFlex("quest_input")
         randomInt = createRandomInt(max, min)
-        console.log(randomInt)
         document.getElementById('minNumber').innerHTML = 'Min: ' + min
         document.getElementById('maxNumber').innerHTML = 'Max: ' + max
         document.getElementById('trys').innerHTML = ' ' + trys
@@ -67,6 +66,7 @@ function checkMinAndMaxNumberFromUserInput(max, min) {
 }
 
 function checkAnswer() {
+
     let userAnswer = parseInt(document.getElementById('user_answer').value)
     if (userAnswer == null || isNaN(userAnswer)) {
         alert("Gib eine Zahl ein!")
@@ -115,37 +115,42 @@ function showAnswer() {
 Kürzere Schreibweisen von Funktionen
  */
 function anDatenbankSchicken() {
-    let name1= localStorage.getItem("player_name")
+    let name1 = localStorage.getItem("player_name")
     let nickname1 = localStorage.getItem("nickname")
-    let zahl1 = randomInt
-    let trys_tried1 = (trys_had - trys)
-    let trys_had1 = trys_had
-    let won1 = won
+    let zahl1 = localStorage.getItem("zahl")
+    let trys_tried1 = (localStorage.getItem("trys_tried"))
+    let trys_had1 = localStorage.getItem("trys_had")
+    let won1 = localStorage.getItem("won")
 
     $.ajax({
-        url: "./dbSave.php",
+        url: "../datenbank/dbSave.php",
         type: "POST",
         data: {
-            name:name1,
-            nickname:nickname1,
-            zahl:zahl1,
-            trys_tried:trys_tried1,
-            trys_had:trys_had1,
-            won:won1
+            name: name1,
+            nickname: nickname1,
+            zahl: zahl1,
+            trys_tried: trys_tried1,
+            trys_had: trys_had1,
+            won: won1
         },
-        success: function(data){
+        success: function (data) {
             console.log("worked", data);
             window.location.href = "../../view/index.php"
         },
-        error: function(data){
+        error: function (data) {
             console.error("error", data);
         }
     });
+    localStorage.removeItem("zahl", randomInt);
+    localStorage.removeItem("trys_tried", (trys_had - trys));
+    localStorage.removeItem("trys_had", trys_had);
+    localStorage.removeItem("won", won);
 }
+
 function localStorageAbspeicherung() {
     localStorage.setItem("zahl", randomInt);
     localStorage.setItem("trys_tried", (trys_had - trys));
-    localStorage.setItem("try_had", trys_had);
+    localStorage.setItem("trys_had", trys_had);
     localStorage.setItem("won", won);
 
 }
