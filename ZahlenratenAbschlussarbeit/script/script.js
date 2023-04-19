@@ -40,6 +40,7 @@ function checkNumber() {
     document.getElementById("tries").innerHTML = "<strong>" + tries + "</strong>"
     if (userValue == randomInt) {
         won = true
+        sendGamerToScoreboadDB()
         showElement("msgBoxAnsCorrect")
         hintMsg("correct")
     } else {
@@ -79,6 +80,7 @@ function createUser() {
 
         localStorage.setItem("name", name);
         localStorage.setItem("nickname", nickname);
+        sendUserToDatabase(name, nickname)
 
         window.location.href = "game.php";
     });
@@ -124,9 +126,11 @@ function hintMsg(typeOfHint) {
 }
 
 // Datenbank
-function sendUserToDatabase() {
-    let nameDB = localStorage.getItem("name")
-    let nicknameDB = localStorage.getItem("nickname")
+function sendUserToDatabase(name, nickname) {
+    let nameDB = name
+    let nicknameDB = nickname
+    // let nameDB = localStorage.getItem("name")
+    // let nicknameDB = localStorage.getItem("nickname")
 
     $.ajax({
         url: "../database/db_user.php",
