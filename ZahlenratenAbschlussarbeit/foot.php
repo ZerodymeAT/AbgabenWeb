@@ -1,4 +1,3 @@
-<?php require('head.php'); ?>
 <section>
     <div class="ende">
         Copyright by Bätter-Solutions

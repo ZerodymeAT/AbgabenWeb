@@ -3,8 +3,7 @@
 let randomInt = -1
 let tries = 10
 let counter = 0
-let won = false
-
+let won = 0
 
 function getMinAndMaxValuesFromUser() {
     let min = parseInt(document.getElementById("minValue").value)
@@ -36,10 +35,12 @@ function getMinAndMaxValuesFromUser() {
 function checkNumber() {
     let userValue = parseInt(document.getElementById("userValue").value)
     console.log("Generierte Zahl: " + randomInt)
-    console.log("Versuche: " + tries)
+    console.log("Offene Versuche: " + tries)
     document.getElementById("tries").innerHTML = "<strong>" + tries + "</strong>"
+    counter++;
+    console.log("Getätigte Versuche" + counter)
     if (userValue == randomInt) {
-        won = true
+        won = 1
         sendGamerToScoreboadDB()
         showElement("msgBoxAnsCorrect")
         hintMsg("correct")
@@ -62,6 +63,8 @@ function checkNumber() {
 }
 
 function givenUp() {
+    localStorage.removeItem('[Zahlenraten] Name');
+    localStorage.removeItem('[Zahlenraten] Nickname');
     showElement("msgBoxHint")
     hintMsg("givenUp")
 }
@@ -71,17 +74,13 @@ function newGame() {
 }
 
 function createUser() {
-
     document.getElementById("LoStUsRe").addEventListener("submit", function (event) {
         event.preventDefault();
-
-        var name = document.getElementById("name").value;
-        var nickname = document.getElementById("nickname").value;
-
-        localStorage.setItem("name", name);
-        localStorage.setItem("nickname", nickname);
-        sendUserToDatabase(name, nickname)
-
+        let name = document.getElementById("name").value;
+        let nickname = document.getElementById("nickname").value;
+        localStorage.setItem("[Zahlenraten] Name", name);
+        localStorage.setItem("[Zahlenraten] Nickname", nickname);
+        sendUserToDatabase(name, nickname);
         window.location.href = "game.php";
     });
 
@@ -120,8 +119,7 @@ function hintMsg(typeOfHint) {
     } else if (typeOfHint === "correct") {
         document.getElementById("ansCorrectMsg").innerHTML = "<strong>Super!</strong> Du hast die Zahl erraten"
     } else if (typeOfHint === "givenUp") {
-        document.getElementById("hintMsg").innerHTML = "Die Zahl war: <strong><span id='randomInt'></span></strong>"
-
+        document.getElementById("hintMsg").innerHTML = "Die Zahl war: <strong>" + randomInt + " </strong>"
     }
 }
 
@@ -129,8 +127,7 @@ function hintMsg(typeOfHint) {
 function sendUserToDatabase(name, nickname) {
     let nameDB = name
     let nicknameDB = nickname
-    // let nameDB = localStorage.getItem("name")
-    // let nicknameDB = localStorage.getItem("nickname")
+
 
     $.ajax({
         url: "../database/db_user.php",
@@ -143,32 +140,32 @@ function sendUserToDatabase(name, nickname) {
             console.log("worked", data);
             window.location.href = "../scoreboard.php"
         },
-        error: function (data) {
+        error: function (data, jqXHR, textStatus, errorThrown) {
             console.error("error", data);
+            console.log(jqXHR.responseText);
+            console.log(textStatus);
+            console.log(errorThrown);
         }
     });
 
-    }
+}
 
-function sendGamerToScoreboadDB(){
-    let nameSB = localStorage.getItem("name")
-    let nicknameSB = localStorage.getItem("nickname")
-    let rndZahlSB = localStorage.getItem("randomNumber")
-    let number_of_triesSB = (localStorage.getItem("number_of_tries"))
-    let left_triesSB = localStorage.getItem("left_tries")
-    let wonSB = localStorage.getItem("won")
+function sendGamerToScoreboadDB() {
+    // hier gehört nach was hin, womit man die ID von erstellten User abfragt.
+    let rndZahlSB = randomInt
+    let number_of_triesSB = counter
+    let left_triesSB = tries
+    let wonSB = won
 
     $.ajax({
         url: "../database/db_scoreboard.php",
         type: "POST",
         data: {
-            name: nameSB,
-            nickname: nicknameSB,
+            // Player_id welche man noch abfragen muss
             randomNumber: rndZahlSB,
             number_of_tries: number_of_triesSB,
             left_tries: left_triesSB,
             won: wonSB
-
         },
         success: function (data) {
             console.log("worked", data);

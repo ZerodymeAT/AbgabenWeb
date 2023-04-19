@@ -1,5 +1,8 @@
-<?php require('head.php'); ?>
-<?php include('nav.php'); ?>
+<?php
+global $pdo;
+require('head.php');
+require('database\db_config.php');
+include('nav.php'); ?>
     <main>
         <section>
             <table class="table table-striped">
@@ -9,6 +12,8 @@
                     <th scope="col">Username</th>
                     <th scope="col">Zufallszahl</th>
                     <th scope="col">Anzahl der Versuche</th>
+                    <th scope="col">Wie oft versucht</th>
+                    <th scope="col">Gewonnen</th>
                     <th>#</th>
                 </tr>
                 </thead>
@@ -22,6 +27,8 @@
                         <td> <?= $row['player_id'] ?></td>
                         <td> <?= $row['randomNumber'] ?> </td>
                         <td> <?= $row['number_of_tries'] ?> </td>
+                        <td> <?= $row['left_tries'] ?> </td>
+                        <td> <?= $row['won'] ?> </td>
                     </tr>
                 <?php } ?>
                 </tbody>

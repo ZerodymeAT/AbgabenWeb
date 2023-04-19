@@ -1,5 +1,7 @@
-<?php require('head.php'); ?>
-<?php include('nav.php'); ?>
+<?php
+require('head.php');
+include('nav.php');
+?>
 <main>
     <article class="userRegister" id="userRegister">
         <section>

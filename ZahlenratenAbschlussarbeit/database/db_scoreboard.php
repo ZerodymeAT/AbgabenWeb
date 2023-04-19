@@ -1,24 +1,17 @@
-<?php
-try {
-    $pdo = new PDO('mysql:host=localhost:3306;dbname=zahlenraten', 'root', '');
-} catch (PDOException $e) {
-    print "Error!: " . $e->getMessage() . "<br/>";
-    die();
-}
+<?php global $pdo;
+require('db_config.php');
 
-$name = $_POST['name'];
+$player_id = $_POST['player_id'];
 $randomNumber = $_POST['randomNumber'];
 $number_of_tries = $_POST['number_of_tries'];
 $left_tries = $_POST['left_tries'];
 $won = $_POST['won'];
 
-
-$stmt = $pdo->prepare("INSERT INTO db_user (name, nickname) VALUES (:name, :nickname)");
+$stmt = $pdo->prepare("INSERT INTO db_scoreboard (player_id, randomNumber, number_of_tries, left_tries, won) VALUES (:player_id, :randomNumber, :number_of_tries, :left_tries, :won)");
 $stmt->execute(array(
-    'name' => $name,
-    'nickname' => $nickname,
-    'randomNumber' => $_POST['randomNumber'],
-
+    ':player_id' => $_POST['$player_id'],
+    ':randomNumber' => $_POST['randomNumber'],
+    ':number_of_tries' => $_POST['number_of_tries'],
+    ':left_tries' => $_POST['left_tries'],
+    ':won' => $_POST['won']
 ));
-
-

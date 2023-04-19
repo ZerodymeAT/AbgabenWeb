@@ -1,6 +1,4 @@
 <?php
-
-
 try {
     $pdo = new PDO('mysql:host=localhost:3306;dbname=basic_abschluss', 'root', '');
 } catch (PDOException $e) {

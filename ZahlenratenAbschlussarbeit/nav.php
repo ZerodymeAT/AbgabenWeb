@@ -1,5 +1,3 @@
-<?php require('head.php'); ?>
-<?php require('database\db_config.php'); ?>
 <ul>
   <li class="menu"><a href="index.php">Home</a></li>
   <li class="menu"><a href="scoreboard.php">Scoreboard</a></li>
