@@ -7,7 +7,8 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Username</th>
-                    <th scope="col">Score vom:</th>
+                    <th scope="col">Zufallszahl</th>
+                    <th scope="col">Anzahl der Versuche</th>
                     <th>#</th>
                 </tr>
                 </thead>
@@ -18,8 +19,9 @@
                     ?>
                     <tr>
                         <td> <?= $row['id'] ?> </td>
-                        <td> <?= $row['username'] ?></td>
-                        <td> <?= $row['created_at'] ?> </td>
+                        <td> <?= $row['player_id'] ?></td>
+                        <td> <?= $row['randomNumber'] ?> </td>
+                        <td> <?= $row['number_of_tries'] ?> </td>
                     </tr>
                 <?php } ?>
                 </tbody>

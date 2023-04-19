@@ -7,7 +7,18 @@ try {
 }
 
 $name = $_POST['name'];
-$nickname = $_POST['nickname'];
+$randomNumber = $_POST['randomNumber'];
+$number_of_tries = $_POST['number_of_tries'];
+$left_tries = $_POST['left_tries'];
+$won = $_POST['won'];
 
-$stmt = $pdo->prepare("INSERT INTO db_user (name, nickname) VALUES (:name, : nickname)");
+
+$stmt = $pdo->prepare("INSERT INTO db_user (name, nickname) VALUES (:name, :nickname)");
+$stmt->execute(array(
+    'name' => $name,
+    'nickname' => $nickname,
+    'randomNumber' => $_POST['randomNumber'],
+
+));
+
 
