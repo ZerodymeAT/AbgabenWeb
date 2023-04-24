@@ -6,13 +6,15 @@ include('nav.php');
     <article class="userRegister" id="userRegister">
         <section>
             <form id="LoStUsRe" method="POST">
-                <div>
+                <div class="registerForm flex">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
+                </div>
+                <div class="registerForm flex">
                     <label for="nickname">Nickname:</label>
                     <input type="text" id="nickname" name="nickname" required>
                 </div>
-                <div>
+                <div class="flex">
                     <input type="submit" value="Submit" onclick="createUser()">
                 </div>
             </form>

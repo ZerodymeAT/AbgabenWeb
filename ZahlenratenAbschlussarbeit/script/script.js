@@ -4,7 +4,9 @@ let randomInt = -1
 let tries = 10
 let counter = 0
 let won = 0
-let lastPlayerID = 0
+let minmaxrange = 0
+let name
+let nickname
 
 function getMinAndMaxValuesFromUser() {
     let min = parseInt(document.getElementById("minValue").value)
@@ -26,27 +28,26 @@ function getMinAndMaxValuesFromUser() {
         document.getElementById("minValuePrint").innerHTML = "<strong>" + min + "</strong>"
         document.getElementById("maxValuePrint").innerHTML = "<strong>" + max + "</strong>"
         document.getElementById("tries").innerHTML = "<strong>" + tries + "</strong>"
+        minmaxrange = max - min
         console.log("MinValue: " + min)
         console.log("MaxValue: " + max)
-        console.log("Zufallszahl: " + randomInt)
+        console.log("Range: " + minmaxrange)
     }
 
 }
 
 function checkNumber() {
     let userValue = parseInt(document.getElementById("userValue").value)
-    console.log("Generierte Zahl: " + randomInt)
-    console.log("Offene Versuche: " + tries)
-    counter++;
-    console.log("Getätigte Versuche: " + counter)
     if (userValue == randomInt) {
+        counter++
         won = 1
         showElement("msgBoxAnsCorrect")
         makeElementHidden("msgBoxHint")
+        makeElementHidden("gamepanel")
+        makeElementHidden("findNumberTextblock")
         hintMsg("correct")
-        sendGamerToScoreboadDB(lastPlayerID)
+        sendGamerToScoreboadDB()
     } else {
-        tries--
         if (tries <= 0) {
             showElement("errorBox")
             errorMsg(3)
@@ -59,14 +60,20 @@ function checkNumber() {
             showElement("msgBoxHint")
             hintMsg("toolow")
         }
+        counter++
+        tries--
     }
     document.getElementById("tries").innerHTML = "<strong>" + tries + "</strong>"
+    console.log("Generierte Zahl: " + randomInt)
+    console.log("Offene Versuche: " + tries)
+    console.log("Getätigte Versuche: " + counter)
 }
 
 function givenUp() {
-    localStorage.removeItem('[Zahlenraten] Name');
-    localStorage.removeItem('[Zahlenraten] Nickname');
+    sendGamerToScoreboadDB();
     showElement("msgBoxHint")
+    makeElementHidden("gamepanel")
+    makeElementHidden("findNumberTextblock")
     hintMsg("givenUp")
 }
 
@@ -78,39 +85,21 @@ function newGame() {
 
 function createUser() {
     event.preventDefault();
-    let name = document.getElementById("name").value;
-    let nickname = document.getElementById("nickname").value;
+    localStorage.removeItem('[Zahlenraten] Name');
+    localStorage.removeItem('[Zahlenraten] Nickname');
+    name = document.getElementById("name").value;
+    nickname = document.getElementById("nickname").value;
     localStorage.setItem("[Zahlenraten] Name", name);
     localStorage.setItem("[Zahlenraten] Nickname", nickname);
-    sendUserToDatabase(name, nickname);
+    window.location.href = "./game.php"
 }
 
 // Datenbank
-function sendUserToDatabase(nameDB, nicknameDB) {
-    $.ajax({
-        url: "./database/db_user.php",
-        type: "POST",
-        data: {
-            name: nameDB,
-            nickname: nicknameDB
-        },
-        success: function (data) {
-            console.log("worked", data);
-            window.location.href = "./game.php"
-            console.log("Die Player ID in der Datenbank ist: ", lastPlayerID)
-
-        },
-        error: function (data) {
-            console.error("error", data);
-        }
-    });
-
-}
-
-function sendGamerToScoreboadDB(lastPlayerID) {
+function sendGamerToScoreboadDB() {
     let nameSB = localStorage.getItem("[Zahlenraten] Name")
     let nicknameSB = localStorage.getItem("[Zahlenraten] Nickname")
     let rndZahlSB = randomInt
+    let minmaxrangeDB = minmaxrange
     let number_of_triesSB = counter
     let left_triesSB = tries
     let wonSB = won
@@ -119,10 +108,10 @@ function sendGamerToScoreboadDB(lastPlayerID) {
         url: "./database/db_scoreboard.php",
         type: "POST",
         data: {
-            id: lastPlayerID,
             name: nameSB,
             nickname: nicknameSB,
             randomNumber: rndZahlSB,
+            minmaxrange: minmaxrangeDB,
             number_of_tries: number_of_triesSB,
             left_tries: left_triesSB,
             won: wonSB
@@ -135,6 +124,7 @@ function sendGamerToScoreboadDB(lastPlayerID) {
         }
     });
 }
+
 function generateRandomInt(max, min) {
     return Math.floor(Math.random() * (max - min)) + min
 }
@@ -165,7 +155,7 @@ function hintMsg(typeOfHint) {
     } else if (typeOfHint === "toolow") {
         document.getElementById("hintMsg").innerHTML = "Die Zahl ist zu niedrig"
     } else if (typeOfHint === "correct") {
-        document.getElementById("ansCorrectMsg").innerHTML = "<strong>Super!</strong> Du hast die Zahl erraten"
+        document.getElementById("ansCorrectMsg").innerHTML = "<strong>Super!</strong> Du hast die Zahl nach " + counter + " Versuchen erraten"
     } else if (typeOfHint === "givenUp") {
         document.getElementById("hintMsg").innerHTML = "Die Zahl war: <strong>" + randomInt + " </strong>"
     }
