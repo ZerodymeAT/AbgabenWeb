@@ -9,26 +9,24 @@ include('nav.php'); ?>
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Username</th>
+                    <th scope="col">Nickname</th>
                     <th scope="col">Zufallszahl</th>
                     <th scope="col">Anzahl der Versuche</th>
                     <th scope="col">Wie oft versucht</th>
-                    <th scope="col">Gewonnen</th>
-                    <th>#</th>
+<!--                    <th>#</th>-->
                 </tr>
                 </thead>
                 <tbody>
                 <?php
-                $sql = "SELECT * FROM db_scoreboard";
+                $sql = "SELECT * FROM db_userwithscoreboard";
                 foreach ($pdo->query($sql) as $row) {
                     ?>
                     <tr>
-                        <td> <?= $row['id'] ?> </td>
-                        <td> <?= $row['player_id'] ?></td>
+                        <td> <?= $row['won'] ?> </td>
+                        <td> <?= $row['nickname'] ?></td>
                         <td> <?= $row['randomNumber'] ?> </td>
                         <td> <?= $row['number_of_tries'] ?> </td>
                         <td> <?= $row['left_tries'] ?> </td>
-                        <td> <?= $row['won'] ?> </td>
                     </tr>
                 <?php } ?>
                 </tbody>

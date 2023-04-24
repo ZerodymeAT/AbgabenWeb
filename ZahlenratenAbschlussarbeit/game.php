@@ -38,7 +38,7 @@ include('nav.php');
             <div>
                 <p>Die Zahl zwischen <span id="minValuePrint"></span> und <span id="maxValuePrint"></span> wurde generiert</p>
                 <p>Was denkst du ist die richtige Antwort?</p>
-                <p>Mögliche Versuche: <span id="tries"></span></p>
+                <p>Offene Versuche: <span id="tries"></span></p>
             </div>
             <div class="userInputButton">
                 <label for="userValue"></label>

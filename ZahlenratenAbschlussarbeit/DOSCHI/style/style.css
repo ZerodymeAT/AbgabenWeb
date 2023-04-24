@@ -1,0 +1,277 @@
+:root {
+    --primary-color: black;
+    --secondary-color: #6c757d;
+    --third-color: white;
+    --background-color-light: beige;
+    --background-color-dark: black;
+}
+
+nav {
+    background-color: var(--background-color-dark);
+    padding: 10px; }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between; }
+
+li { margin-left: 10px; }
+
+a {
+    text-decoration: none;
+    color: var(--third-color);
+    padding: 5px; }
+
+body {
+    background-color: var(--background-color-light); }
+
+header {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 20px; }
+
+h1, h3 {
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.8em;
+    margin: 0 0 1em;
+    text-shadow: 1px 1px grey;
+}
+
+p {
+    color: var(--primary-color);
+    font-size: 18px;
+    font-style: italic;
+    margin: 0; }
+
+.form4name {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-top: 50px;
+}
+label {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+input {
+    font-size: 1.2em;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+.reset {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #bd4545;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+.reset:hover {
+    background-color: #FFCCCD;
+}
+.submit {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: darkgreen;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+.submit:hover {
+    background-color: #32CD32;
+}
+
+/* Spiel CSS */
+#user-input {
+    width: 80px;
+    margin: 20px 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    text-align: center;
+}
+
+.container #submit-btn, #start-btn {
+    font-size: 1.3em;
+    font-weight: 500;
+    margin: 0 auto;
+    background-color: var(--secondary-color);
+    border-radius: 0.3em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.6em 2em;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+#showTries, #highOrLowIndicator {
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.5em;
+    margin: 10px 10px 1em;
+}
+
+#highOrLowIndicator {
+    font-weight: bold;
+}
+
+#tries-value {
+    font-weight: bold;
+}
+
+#start-btn:hover, #submit-btn:hover {
+    background-color: #eeedf1;
+}
+
+.container input {
+    font-weight: 600;
+    width: 2.35em;
+    text-align: center;
+    padding: 0 0.2em;
+    border: none;
+    background-color: transparent;
+    border-bottom: 0.12em solid #23234c;
+}
+
+.setRange {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.setRange input {
+    font-weight: 600;
+    width: 2.35em;
+    text-align: center;
+    padding: 0 0.2em;
+    border: none;
+    border-bottom: 0.12em solid #23234c;
+}
+
+/*Hide Number Arrows*/
+.container input[type="number"] {
+    -moz-appearance: textfield;
+}
+.setRange input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.container input[type="number"]::-webkit-outer-spin-button,
+.container input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.setRange input[type="number"]::-webkit-outer-spin-button,
+.setRange input[type="number"]::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+.hide { display: none; }
+
+/*TabellenStyling von Tobi ;) */
+table {
+    border: 1px solid var(--white);
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+}
+
+table tr {
+    background-color: var(--white);
+    border: 1px solid grey;
+    padding: .35em;
+}
+
+table th, table td {
+    padding: .625em;
+    text-align: center;
+}
+
+table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 601px) {
+    tr:nth-child(2n+2) {
+        background-color: grey;
+        color: var(--white);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        border: 0;
+    }
+
+    table caption {
+        font-size: 1.3em;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table tr {
+        border-bottom: 3px solid var(--white);
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    table td {
+        border-bottom: 1px solid var(--white);
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+}
+
+

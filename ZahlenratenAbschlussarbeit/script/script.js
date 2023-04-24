@@ -4,6 +4,7 @@ let randomInt = -1
 let tries = 10
 let counter = 0
 let won = 0
+let lastPlayerID = 0
 
 function getMinAndMaxValuesFromUser() {
     let min = parseInt(document.getElementById("minValue").value)
@@ -36,15 +37,16 @@ function checkNumber() {
     let userValue = parseInt(document.getElementById("userValue").value)
     console.log("Generierte Zahl: " + randomInt)
     console.log("Offene Versuche: " + tries)
-    document.getElementById("tries").innerHTML = "<strong>" + tries + "</strong>"
     counter++;
-    console.log("Getätigte Versuche" + counter)
+    console.log("Getätigte Versuche: " + counter)
     if (userValue == randomInt) {
         won = 1
-        sendGamerToScoreboadDB()
         showElement("msgBoxAnsCorrect")
+        makeElementHidden("msgBoxHint")
         hintMsg("correct")
+        sendGamerToScoreboadDB(lastPlayerID)
     } else {
+        tries--
         if (tries <= 0) {
             showElement("errorBox")
             errorMsg(3)
@@ -52,14 +54,13 @@ function checkNumber() {
             givenUp()
         } else if (userValue > randomInt) {
             showElement("msgBoxHint")
-            tries--;
             hintMsg("toohigh")
         } else {
             showElement("msgBoxHint")
-            tries--;
             hintMsg("toolow")
         }
     }
+    document.getElementById("tries").innerHTML = "<strong>" + tries + "</strong>"
 }
 
 function givenUp() {
@@ -70,23 +71,70 @@ function givenUp() {
 }
 
 function newGame() {
-    window.location.reload();
+    localStorage.removeItem('[Zahlenraten] Name');
+    localStorage.removeItem('[Zahlenraten] Nickname');
+    window.location.href = "./index.php"
 }
 
 function createUser() {
-    document.getElementById("LoStUsRe").addEventListener("submit", function (event) {
-        event.preventDefault();
-        let name = document.getElementById("name").value;
-        let nickname = document.getElementById("nickname").value;
-        localStorage.setItem("[Zahlenraten] Name", name);
-        localStorage.setItem("[Zahlenraten] Nickname", nickname);
-        sendUserToDatabase(name, nickname);
-        window.location.href = "game.php";
-    });
+    event.preventDefault();
+    let name = document.getElementById("name").value;
+    let nickname = document.getElementById("nickname").value;
+    localStorage.setItem("[Zahlenraten] Name", name);
+    localStorage.setItem("[Zahlenraten] Nickname", nickname);
+    sendUserToDatabase(name, nickname);
+}
 
+// Datenbank
+function sendUserToDatabase(nameDB, nicknameDB) {
+    $.ajax({
+        url: "./database/db_user.php",
+        type: "POST",
+        data: {
+            name: nameDB,
+            nickname: nicknameDB
+        },
+        success: function (data) {
+            console.log("worked", data);
+            window.location.href = "./game.php"
+            console.log("Die Player ID in der Datenbank ist: ", lastPlayerID)
+
+        },
+        error: function (data) {
+            console.error("error", data);
+        }
+    });
 
 }
 
+function sendGamerToScoreboadDB(lastPlayerID) {
+    let nameSB = localStorage.getItem("[Zahlenraten] Name")
+    let nicknameSB = localStorage.getItem("[Zahlenraten] Nickname")
+    let rndZahlSB = randomInt
+    let number_of_triesSB = counter
+    let left_triesSB = tries
+    let wonSB = won
+
+    $.ajax({
+        url: "./database/db_scoreboard.php",
+        type: "POST",
+        data: {
+            id: lastPlayerID,
+            name: nameSB,
+            nickname: nicknameSB,
+            randomNumber: rndZahlSB,
+            number_of_tries: number_of_triesSB,
+            left_tries: left_triesSB,
+            won: wonSB
+        },
+        success: function (data) {
+            console.log("worked", data);
+        },
+        error: function (data) {
+            console.error("error", data);
+        }
+    });
+}
 function generateRandomInt(max, min) {
     return Math.floor(Math.random() * (max - min)) + min
 }
@@ -121,58 +169,4 @@ function hintMsg(typeOfHint) {
     } else if (typeOfHint === "givenUp") {
         document.getElementById("hintMsg").innerHTML = "Die Zahl war: <strong>" + randomInt + " </strong>"
     }
-}
-
-// Datenbank
-function sendUserToDatabase(name, nickname) {
-    let nameDB = name
-    let nicknameDB = nickname
-
-
-    $.ajax({
-        url: "../database/db_user.php",
-        type: "POST",
-        data: {
-            name: nameDB,
-            nickname: nicknameDB,
-        },
-        success: function (data) {
-            console.log("worked", data);
-            window.location.href = "../scoreboard.php"
-        },
-        error: function (data, jqXHR, textStatus, errorThrown) {
-            console.error("error", data);
-            console.log(jqXHR.responseText);
-            console.log(textStatus);
-            console.log(errorThrown);
-        }
-    });
-
-}
-
-function sendGamerToScoreboadDB() {
-    // hier gehört nach was hin, womit man die ID von erstellten User abfragt.
-    let rndZahlSB = randomInt
-    let number_of_triesSB = counter
-    let left_triesSB = tries
-    let wonSB = won
-
-    $.ajax({
-        url: "../database/db_scoreboard.php",
-        type: "POST",
-        data: {
-            // Player_id welche man noch abfragen muss
-            randomNumber: rndZahlSB,
-            number_of_tries: number_of_triesSB,
-            left_tries: left_triesSB,
-            won: wonSB
-        },
-        success: function (data) {
-            console.log("worked", data);
-            window.location.href = "../scoreboard.php"
-        },
-        error: function (data) {
-            console.error("error", data);
-        }
-    });
 }

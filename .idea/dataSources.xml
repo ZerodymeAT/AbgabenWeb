@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Lukas Amazon" uuid="cc5a398c-a2d4-4d0c-88ad-e206e9974c14">
-      <driver-ref>mariadb</driver-ref>
-      <synchronize>true</synchronize>
-      <remarks>codersbayroot</remarks>
-      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mariadb://codersbay-nation.c9mh1sytq7cn.eu-central-1.rds.amazonaws.com:3306/otterbaeck</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
     <data-source source="LOCAL" name="XAMPP" uuid="1f424f94-1be2-48cc-9629-7428271bd281">
       <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>

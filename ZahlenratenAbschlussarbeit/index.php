@@ -20,4 +20,5 @@ include('nav.php');
     </article>
 </main>
 <?php require('foot.php'); ?>
+
 <script src="script/script.js"></script>
