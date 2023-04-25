@@ -15,7 +15,7 @@ include('nav.php');
                     <input type="text" id="nickname" name="nickname" required>
                 </div>
                 <div class="flex">
-                    <input type="submit" value="Submit" onclick="createUser()">
+                    <button type="submit" value="Submit" onclick="createUser()">Submit</button>
                 </div>
             </form>
         </section>

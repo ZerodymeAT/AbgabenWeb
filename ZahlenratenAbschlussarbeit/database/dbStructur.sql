@@ -10,6 +10,6 @@ CREATE TABLE `db_userwithscoreboard` (
 `randomNumber` int (10),
 `number_of_tries` int(10),
 `left_tries` int(10),
-`range` int(10),
+`minmaxrange` int(10),
 `won` tinyint(1)
 );

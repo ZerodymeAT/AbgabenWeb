@@ -89,9 +89,13 @@ function createUser() {
     localStorage.removeItem('[Zahlenraten] Nickname');
     name = document.getElementById("name").value;
     nickname = document.getElementById("nickname").value;
-    localStorage.setItem("[Zahlenraten] Name", name);
-    localStorage.setItem("[Zahlenraten] Nickname", nickname);
-    window.location.href = "./game.php"
+    if (!name || name.trim().length === 0 || !nickname || nickname.trim().length ===0){
+        alert("Name oder Nickname wurde nicht eingegeben")
+    } else {
+        localStorage.setItem("[Zahlenraten] Name", name);
+        localStorage.setItem("[Zahlenraten] Nickname", nickname);
+        window.location.href = "./game.php"
+    }
 }
 
 // Datenbank

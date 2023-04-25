@@ -33,9 +33,9 @@ include('nav.php');
 
         </section>
     </article>
-    <article class="findNumber" id="findNumber">
-        <section class="abstaende">
-            <div class="flex" id="findNumberTextblock">
+    <article class="flex findNumber" id="findNumber">
+        <section>
+            <div class="findNumberTextblock" id="findNumberTextblock">
                 <p>Die Zahl zwischen <span id="minValuePrint"></span> und <span id="maxValuePrint"></span> wurde
                     generiert</p>
                 <p>Was denkst du ist die richtige Antwort?</p>
@@ -47,18 +47,18 @@ include('nav.php');
                     <input type="number" id="userValue" name="userValue" required>
                     <button type="submit"  onclick="checkNumber()" name="userValueButton">Submit</button>
                 </div>
-                <div><button type="button" onclick="givenUp()" name="givenUpButton">Aufgeben</button></div>
+                <div class="flex"><button type="button" onclick="givenUp()" name="givenUpButton">Aufgeben</button></div>
             </div>
             <div>
                 <button type="button" onclick="newGame()" name="newGameButton">Neues Spiel</button>
             </div>
             <div class="msgBoxHint msgBoxHintBG" id="msgBoxHint">
-                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                 <p id="hintMsg"></p>
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
             </div>
             <div class="msgBoxHint msgBoxAnswerCorrect" id="msgBoxAnsCorrect" >
-                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                 <p id="ansCorrectMsg"></p>
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
             </div>
 
         </section>

@@ -14,12 +14,48 @@ body {
 
 
 main {
-    margin: 10px 0 10px 0;
+    margin: 10px auto;
 }
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+p, label {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+input {
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+button {
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--nearblack);
+    color: var(--white);
+}
+
 
 /* Hide and Show Elements*/
 .rangeSelector, .gamepanel, .findNumberTextblock {
     display: flex;
+}
+
+.findNumberTextblock {
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .findNumber {
@@ -33,16 +69,6 @@ main {
     align-items: flex-start;
 }
 
-.flex{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px;
-}
-
-.flex p{
-    display: block;
-}
-
 .registerForm, .MinAndMaxValues div input {
     align-self: stretch;
     max-width: 200px
@@ -51,7 +77,8 @@ main {
 .MinAndMaxValues .SubmitResetButtonMinMax {
     flex-direction: row;
 }
-.MinAndMaxValues .SubmitResetButtonMinMax button{
+
+.MinAndMaxValues .SubmitResetButtonMinMax button {
     margin-right: 10px;
 }
 
@@ -67,7 +94,6 @@ ul {
 
 .userInputButton {
     display: flex;
-    /*flex-wrap: wrap;*/
 }
 
 .menu {
@@ -94,8 +120,11 @@ li a:hover {
 /* Message Boxen */
 .errorBox, .msgBoxHint {
     display: none;
-    padding: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
     color: var(--white);
+    justify-content: space-between;
 }
 
 .errorBoxBG {
@@ -125,6 +154,37 @@ li a:hover {
     color: var(--nearblack);
 }
 
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    border-radius: 25px;
+    padding: 0;
+    margin: 0 auto 0 auto;
+    table-layout: fixed;
+}
+
+table caption {
+    font-size: 1.5em;
+    margin: .5em 0.75em;
+}
+
+table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+
+table th, table td {
+    padding: .625em;
+    text-align: center;
+}
+
+table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
 .ende {
     float: right;
 }
@@ -137,4 +197,48 @@ input[type=number]::-webkit-inner-spin-button {
 
 input[type=number] {
     -moz-appearance: textfield; /* Firefox */
+}
+
+@media screen and (min-width: 600px) {
+    tr:nth-child(2n) {
+        background-color: #c5c5c5;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        border: 0;
+    }
+
+    table caption {
+        font-size: 1.3em
+    }
+
+    table thead {
+        display: none
+    }
+
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
 }
