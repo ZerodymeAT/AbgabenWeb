@@ -1,7 +1,7 @@
 <?php
 global $pdo;
 require('head.php');
-require('database\db_config.php');
+require('database/db_config.php');
 include('nav.php'); ?>
 <main>
     <section>
